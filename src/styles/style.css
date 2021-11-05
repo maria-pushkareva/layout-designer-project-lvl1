@@ -15,13 +15,61 @@
   --color-dark-half: #908d8b;
   --color-brown: #b09a81;
   --color-blue: #1085c5;
-  --color-text: #2a2626;
+}
+
+/* classes for colors */
+.text-white {
+  color: var(--color-white);
+}
+
+.text-half {
+  color: var(--color-white-half);
+}
+
+.text-light {
+  color: var(--color-light);
+}
+
+.bg-light {
+  background-color: var(--color-light);
+}
+
+.text-main {
+  color: var(--color-main);
+}
+
+.bg-main {
+  background-color: var(--color-main);
+}
+
+.text-main-dark {
+  color: var(--color-main-dark);
+}
+
+.text-dark {
+  color: var(--color-dark);
+}
+
+.text-dark-half {
+  color: var(--color-dark-half);
+}
+
+.text-brown {
+  color: var(--color-brown);
+}
+
+.text-blue {
+  color: var(--color-blue);
 }
 
 /* some default values */
 h1,
 h2,
 h3 {
+  margin: 0;
+  padding: 0;
+
+  font-family: "Neucha", cursive;
   line-height: 1.2em;
 }
 
@@ -37,17 +85,78 @@ h3 {
   font-size: 34px;
 }
 
-body {
-  color: var(--color-text);
+.body {
+  display: block;
+  margin: 0;
+
+  color: var(--color-dark);
   font-size: 16px;
+  font-family: "Open Sans", sans-serif;
   line-height: 1.6em;
 }
 
-/* end of default values */
-
 .container {
   width: 1110px;
-  margin: 100px 0;
+  margin: 0 auto;
+  padding: 100px 0;
+}
+
+/* i don't know yet where to put this class */
+.btn {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 13px 24px;
+
+  font-weight: 700;
 
   text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+/* pseudo-element for backgground picture */
+.bg-picture::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  /* z-index: -2; */
+
+  background-image: url("../images/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.1;
+
+  content: "";
+}
+
+/* flex container with text blocks */
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.col {
+  width: 540px;
+}
+
+/* header classes */
+.header {
+  height: 914px;
+}
+
+.header-image {
+  position: absolute;
+  top: 55px;
+  right: -103.81px;
+
+  /* z-index: -1; */
+}
+
+.header-title {
+  margin-bottom: 185px;
+
+  font-weight: 400;
 }
